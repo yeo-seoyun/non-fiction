@@ -1,5 +1,7 @@
 // import { queryClient } from "./routingStart";
 
+import Search from "@/pages/Search/Search";
+import Bestseller from "@/pages/Bestseller/Bestseller";
 import ComingSoon from "@/pages/ComingSoon/ComingSoon";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
@@ -27,9 +29,18 @@ const navigationItems = [
     // lazy: () => import('@/pages/Register'),
   },
   {
+    id: "search",
+    path: "/search",
+    text: "상품 검색 페이지",
+    element: <Search />,
+    lazy: () => import("@/pages/Search/Search"),
+  },
+  {
     id: "bestseller",
     path: "/bestseller",
     text: "베스트 셀러",
+    element: <Bestseller />,
+    lazy: () => import("@/pages/Bestseller/Bestseller"),
   },
   {
     id: "perfume",

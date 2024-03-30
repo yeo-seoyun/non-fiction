@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleSearchClick = () => {
+    navigate("/search");
+  };
+
   return (
     <header className="w-full h-[90px] px-8 flex items-center justify-between text-xl font-noto-serif font-light bg-white bg-opacity-70 shadow-default fixed z-30">
       <Link to="/" className="bg-nf-logo w-[60px] h-[60px] bg-contain"></Link>
@@ -53,6 +59,7 @@ function Header() {
           type="button"
           aria-label="검색"
           className="bg-search-icon w-[29px] h-[25px] bg-contain"
+          onClick={handleSearchClick}
         />
         <button
           type="button"
