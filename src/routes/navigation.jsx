@@ -1,57 +1,63 @@
 // import { queryClient } from "./routingStart";
 
+import ComingSoon from "@/pages/ComingSoon/ComingSoon";
 import Home from "@/pages/Home/Home";
+import Login from "@/pages/Login/Login";
 
 const navigationItems = [
   {
     id: "home",
     path: "/",
     index: true,
-    text: "È¨",
+    text: "í™ˆ",
     element: <Home />,
     lazy: () => import("@/pages/Home/Home"),
   },
   {
     id: "login",
     path: "/login",
-    text: "·Î±×ÀÎ È­¸é",
+    text: "ë¡œê·¸ì¸ í˜ì´ì§€",
+    element: <Login />,
     lazy: () => import("@/pages/Login/Login"),
   },
   {
     id: "register",
     path: "/register",
-    text: "È¸¿ø°¡ÀÔ È­¸é",
+    text: "íšŒì›ê°€ì… í˜ì´ì§€",
     // lazy: () => import('@/pages/Register'),
   },
   {
     id: "bestseller",
     path: "/bestseller",
-    text: "º£½ºÆ® ¼¿·¯",
+    text: "ë² ìŠ¤íŠ¸ ì…€ëŸ¬",
   },
   {
     id: "perfume",
     path: "/perfume",
-    text: "Çâ¼ö",
+    text: "í–¥ìˆ˜",
   },
   {
     id: "handandbody",
-    path: "/products/handandbody",
-    text: "ÇÚµå ¾Ø ¹Ùµğ",
+    path: "/handandbody",
+    text: "í•¸ë“œ ì•¤ ë°”ë””",
   },
   {
     id: "homefragrance",
-    path: "/products/homefragrance",
-    text: "È¨ ÇÁ·¡±×·±½º",
+    path: "/comminsoon",
+    text: "í™ˆ í”„ë˜ê·¸ë€ìŠ¤",
+    element: <ComingSoon />,
   },
   {
     id: "giftset",
-    path: "/products/giftset",
-    text: "±âÇÁÆ® ¼¼Æ®",
+    path: "/comminsoon",
+    text: "ì„ ë¬¼ ì„¸íŠ¸",
+    element: <ComingSoon />,
   },
   {
     id: "about",
-    path: "/products/about",
-    text: "È¸»ç¼Ò°³",
+    path: "/comminsoon",
+    text: "ì •ë³´",
+    element: <ComingSoon />,
   },
 ];
 
