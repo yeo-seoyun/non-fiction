@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="w-full h-[90px] px-8 flex items-center justify-between text-xl font-noto-serif font-light bg-white bg-opacity-70 shadow-default fixed">
+    <header className="w-full h-[90px] px-8 flex items-center justify-between text-xl font-noto-serif font-light bg-white bg-opacity-70 shadow-default fixed z-30">
       <Link to="/" className="bg-nf-logo w-[60px] h-[60px] bg-contain"></Link>
       <nav className="flex gap-8">
         <Link
@@ -27,21 +27,21 @@ function Header() {
           Hand & Body
         </Link>
         <Link
-          to="/comminsoon"
+          to="/comingsoon"
           aria-label="홈 프래그런스"
           className="hover hover:text-gray-100"
         >
           Home Fragrance
         </Link>
         <Link
-          to="/comminsoon"
+          to="/comingsoon"
           aria-label="선물 세트"
           className="hover hover:text-gray-100"
         >
           Gift Set
         </Link>
         <Link
-          to="/comminsoon"
+          to="/comingsoon"
           aria-label="정보"
           className="hover hover:text-gray-100"
         >

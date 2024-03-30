@@ -43,19 +43,19 @@ const navigationItems = [
   },
   {
     id: "homefragrance",
-    path: "/comminsoon",
+    path: "/comingsoon",
     text: "홈 프래그란스",
     element: <ComingSoon />,
   },
   {
     id: "giftset",
-    path: "/comminsoon",
+    path: "/comingsoon",
     text: "선물 세트",
     element: <ComingSoon />,
   },
   {
     id: "about",
-    path: "/comminsoon",
+    path: "/comingsoon",
     text: "정보",
     element: <ComingSoon />,
   },
