@@ -1,7 +1,11 @@
 // import React from "react";
 
 const Login = () => {
-  return <div className="bg-pink">·Î±×ÀÎ ÆäÀÌÁö</div>;
+  return (
+    <div className="w-full py-[150px] flex flex-coll items-center justify-center">
+      <h2 className="text-3xl">ë¡œê·¸ì¸</h2>
+    </div>
+  );
 };
 
 export default Login;

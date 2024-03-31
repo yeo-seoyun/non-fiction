@@ -1,11 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import useLoginFormStore from "@/store/useLoginFormStore";
+import { Link } from "react-router-dom";
 
 function Header() {
-  const navigate = useNavigate();
-
-  const handleSearchClick = () => {
-    navigate("/search");
-  };
+  const { isLoggedIn } = useLoginFormStore();
 
   return (
     <header className="w-full h-[90px] px-8 flex items-center justify-between text-xl font-noto-serif font-light bg-white bg-opacity-70 shadow-default fixed z-30">
@@ -55,17 +52,18 @@ function Header() {
         </Link>
       </nav>
       <div className="flex gap-1">
-        <button
-          type="button"
+        <Link
+          to="/search"
           aria-label="검색"
           className="bg-search-icon w-[29px] h-[25px] bg-contain"
-          onClick={handleSearchClick}
-        />
-        <button
-          type="button"
-          aria-label="나의정보"
-          className="bg-account-icon w-[29px] h-[25px] bg-contain"
-        />
+        ></Link>
+        {!isLoggedIn && (
+          <Link
+            to="/login"
+            aria-label="나의정보"
+            className="bg-account-icon w-[29px] h-[25px] bg-contain"
+          ></Link>
+        )}
         <button
           type="button"
           aria-label="장바구니"
