@@ -5,6 +5,7 @@ import Bestseller from "@/pages/Bestseller/Bestseller";
 import ComingSoon from "@/pages/ComingSoon/ComingSoon";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
+import SignUp from "@/pages/SignUp/SignUp";
 
 const navigationItems = [
   {
@@ -23,10 +24,11 @@ const navigationItems = [
     lazy: () => import("@/pages/Login/Login"),
   },
   {
-    id: "register",
-    path: "/register",
+    id: "signup",
+    path: "/signup",
     text: "회원가입 페이지",
-    // lazy: () => import('@/pages/Register'),
+    element: <SignUp />,
+    lazy: () => import("@/pages/SignUp/SignUp"),
   },
   {
     id: "search",

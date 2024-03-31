@@ -33,7 +33,7 @@ const Login = () => {
               </Link>
               <span>찾기</span>
             </div>
-            <Link to="/register" aria-label="회원가입" className="font-bold">
+            <Link to="/signup" aria-label="회원가입" className="font-bold">
               회원가입
             </Link>
           </div>
