@@ -1,6 +1,6 @@
 // import React from "react";
 
-import LoginFormForm from "@/components/organisim/LoginForm";
+import LoginFormForm from "@/components/organisms/LoginForm";
 import { Helmet } from "react-helmet";
 
 const Login = () => {

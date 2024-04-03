@@ -1,4 +1,4 @@
-import SignUpForm from "@/components/organisim/SignUpForm";
+import SignUpForm from "@/components/organisms/SignUpForm";
 import { Helmet } from "react-helmet";
 
 function SignUp() {

@@ -6,6 +6,8 @@ import ComingSoon from "@/pages/ComingSoon/ComingSoon";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import SignUp from "@/pages/SignUp/SignUp";
+import Perfume from "@/pages/Perfume/Perfume";
+import Handandbody from "@/pages/Handandbody/Handandbody";
 
 const navigationItems = [
   {
@@ -47,12 +49,16 @@ const navigationItems = [
   {
     id: "perfume",
     path: "/perfume",
+    element: <Perfume />,
     text: "향수",
+    lazy: () => import("@/pages/Perfume/Perfume"),
   },
   {
     id: "handandbody",
     path: "/handandbody",
+    element: <Handandbody />,
     text: "핸드 앤 바디",
+    lazy: () => import("@/pages/Handandbody/Handandbody"),
   },
   {
     id: "homefragrance",

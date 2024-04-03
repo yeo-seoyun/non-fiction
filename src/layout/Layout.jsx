@@ -1,5 +1,5 @@
-import Header from "../components/organisim/Header";
-import Footer from "../components/organisim/Footer";
+import Header from "../components/organisms/Header";
+import Footer from "../components/organisms/Footer";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Provider } from "jotai";

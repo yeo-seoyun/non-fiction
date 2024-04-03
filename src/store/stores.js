@@ -11,3 +11,6 @@ export const emailValid = atom(false); // 이메일 유효성
 export const emailAtom = atom(""); // 이메일 입력값
 export const passwordAtom = atom(""); // 패스워드 입력값
 export const nicknameAtom = atom(""); // 닉네임 입력값
+
+// 카테고리 상태 정의
+export const categoryState = atom("베스트셀러");

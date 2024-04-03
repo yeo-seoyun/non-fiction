@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer() {
   return (
-    <footer className="bg-gray-300 flex flex-col justify-between p-[25px] w-full h-[300px]">
+    <footer className="bg-gray-300 flex flex-col justify-between p-[1.563rem] w-full h-[18.75rem]">
       <div className="flex justify-start gap-44">
         <ul>
           <li className="text-lg pb-5">고객센터</li>
-          <ul className="flex  flex-col gap-1">
+          <ul className="flex flex-col gap-1">
             <li className="text-lg">1666-7891</li>
             <li>
               <FontAwesomeIcon icon={faClock} className="mr-1" />
@@ -26,7 +26,7 @@ function Footer() {
         </ul>
         <ul>
           <li className="text-lg pb-5">서비스</li>
-          <ul className="flex  flex-col gap-1">
+          <ul className="flex flex-col gap-1">
             <li>기업구매문의</li>
             <li>채용</li>
             <li>자주 묻는 질문</li>
