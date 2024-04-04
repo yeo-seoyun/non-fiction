@@ -1,6 +1,6 @@
 // import React from "react";
 
-import LoginFormForm from "@/components/organisms/LoginForm";
+import LoginForm from "@/components/organisms/LoginForm";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
       <section className="w-full py-[9.375rem] flex flex-col gap-24 items-center justify-center">
         <h2 className="text-3xl">로그인</h2>
         <div className="w-[30rem]">
-          <LoginFormForm />
+          <LoginForm />
         </div>
       </section>
     </>

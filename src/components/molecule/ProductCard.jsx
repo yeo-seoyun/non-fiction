@@ -32,7 +32,7 @@ function ProductCard({ product }) {
 
   return (
     <li
-      className="w-[100%] bg-pink-200 flex flex-col justify-between items-center"
+      className="w-full flex flex-col justify-between items-center"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -41,7 +41,7 @@ function ProductCard({ product }) {
         <img
           src={defaultImage}
           alt={title_ko}
-          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500  bg-pink-300 ${
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500  ${
             hover ? "opacity-0" : "opacity-100"
           }`}
         />
@@ -56,7 +56,7 @@ function ProductCard({ product }) {
         {/* "장바구니 담기" 버튼 */}
         <AddCartButton onAddToCart={handleAddToCartClick} isHovering={hover} />
         <AddcartModal
-          show={showModal}
+          isOpen={showModal}
           onClose={handleCloseModal}
           product={product}
         />
