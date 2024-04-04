@@ -65,7 +65,7 @@ function ProductCard({ product }) {
         <div>
           <div className="flex justify-between items-center">
             <p>{title_ko}</p>
-            <p>{price}원</p>
+            <p>{price.toLocaleString()}원</p>
           </div>
           <div>
             <span>{title}</span>,<span>{volume}</span>

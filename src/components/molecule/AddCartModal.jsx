@@ -1,9 +1,32 @@
 import { getPbImage } from "@/util/getPbImage";
 import Input from "../atom/Input";
 import Button from "../atom/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import SelectComponent from "./SelectComponent";
+import { useState } from "react";
+import AddModalTable from "./AddModalTable";
+
+const calculateTotalPrice = (items) => {
+  return items.reduce((total, item) => total + item.price, 0);
+};
 
 function AddcartModal({ isOpen, onClose, product }) {
   const { title_ko, title, price, volume, photo } = product;
+
+  const [selectedOption, setSelectedOption] = useState("");
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleSelectChange = (selectedValue) => {
+    const newItem = {
+      name: product.title,
+      messageCard: selectedValue,
+      price: product.price,
+      quantity: 1,
+    };
+
+    setCartItems((prevItems) => [...prevItems, newItem]);
+  };
 
   const productImage = getPbImage(
     product.collectionId,
@@ -15,6 +38,12 @@ function AddcartModal({ isOpen, onClose, product }) {
     onClose();
   };
 
+  const handleRemoveItem = (index) => {
+    setCartItems((prevItems) => prevItems.filter((item, i) => i !== index));
+  };
+
+  const totalPrice = calculateTotalPrice(cartItems);
+
   return (
     <dialog
       className={`fixed w-full h-full inset-0 bg-black-100 bg-opacity-70 flex justify-center items-center z-50 ${
@@ -24,37 +53,45 @@ function AddcartModal({ isOpen, onClose, product }) {
       onClick={handleOnCloseClick}
     >
       <div
-        className="bg-white overflow-hidden w-[30%] p-4 flex flex-col gap-7"
-        onClick={(e) => e.stopPropagation()} // 모달 내부에서 클릭 이벤트가 오버레이로 전파되는 것을 방지
+        className="bg-white overflow-hidden w-[800px] p-4 flex flex-col gap-7"
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center">
           <h2>장바구니 담기</h2>
-          <button onClick={handleOnCloseClick}>X</button>
+          <button onClick={handleOnCloseClick}>
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
         </div>
         <div className="flex gap-10 item-center">
           <img src={productImage} alt={title_ko} className="w-1/2" />
-          <div className="flex flex-col gap-5">
+          <div className="w-full flex flex-col gap-5 px-1 ">
             <div>
               <p>{title}</p>
               <span>{title_ko}</span>,<span>{volume}</span>
             </div>
             <div>
               <p>메세지카드</p>
-              <Input />
-            </div>
-            <div>
-              <p>각인문구 신청(선택)</p>
-              <Input />
+              <SelectComponent
+                id="messageCard"
+                value={selectedOption}
+                onChange={(e) => handleSelectChange(e.target.value)}
+                options={[
+                  { label: "[필수] 옵션을 선택 해주세요", value: "option1" },
+                  { label: "Thank you", value: "Thank you" },
+                  { label: "Happy Birthday", value: "Happy Birthday" },
+                  { label: "Congratulations", value: "Congratulations" },
+                  { label: "선택안함", value: "선택안함" },
+                ]}
+                className="border p-2 mt-1"
+              />
             </div>
           </div>
         </div>
-        <div>
-          <span>물건 추가</span>
-        </div>
+        <AddModalTable cartItems={cartItems} onRemoveItem={handleRemoveItem} />
         <div className="flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <p>총 금액</p>
-            <p>금액합계</p>
+            <p>{totalPrice.toLocaleString()}원</p>
           </div>
           <div className="flex gap-2 item-center justify-between">
             <Button
