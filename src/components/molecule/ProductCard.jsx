@@ -32,16 +32,16 @@ function ProductCard({ product }) {
 
   return (
     <li
-      className="w-[20rem] h-[26.25rem] flex flex-col justify-between items-center"
+      className="w-[100%] bg-pink-200 flex flex-col justify-between items-center"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <figure className="w-full h-full relative m-0">
+      <figure className="w-full relative m-0" style={{ paddingTop: "100%" }}>
         {/* 기본 이미지 */}
         <img
           src={defaultImage}
           alt={title_ko}
-          className={`absolute inset-0 w-full h-[20rem] transition-opacity duration-500 object-contain ${
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500  bg-pink-300 ${
             hover ? "opacity-0" : "opacity-100"
           }`}
         />
@@ -49,7 +49,7 @@ function ProductCard({ product }) {
         <img
           src={hoverImage}
           alt={title_ko}
-          className={`absolute inset-0 w-[20rem] h-[20rem] transition-opacity duration-500 ${
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
             hover ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -65,7 +65,7 @@ function ProductCard({ product }) {
         <div>
           <div className="flex justify-between items-center">
             <p>{title_ko}</p>
-            <p>{price}</p>
+            <p>{price}원</p>
           </div>
           <div>
             <span>{title}</span>,<span>{volume}</span>
