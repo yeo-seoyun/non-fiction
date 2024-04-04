@@ -6,8 +6,8 @@ function Header() {
   const { isLoggedIn } = useLoginFormStore();
 
   return (
-    <div className="w-full shadow-default fixed z-30 ">
-      <header className="w-full h-[5.625rem] px-8 flex items-center justify-between text-xl font-noto-serif font-light bg-white bg-opacity-70 ">
+    <div className="w-full shadow-default fixed z-30 bg-white bg-opacity-70">
+      <header className="w-full h-[5.625rem] px-8 flex items-center justify-between text-xl font-noto-serif font-light">
         <Link
           to="/"
           className="bg-nf-logo w-[3.75rem] h-[3.75rem] bg-contain"
