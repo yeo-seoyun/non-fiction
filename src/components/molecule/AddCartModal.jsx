@@ -71,7 +71,7 @@ function AddcartModal({ isOpen, onClose, product }) {
       onClick={handleOnCloseClick}
     >
       <div
-        className="bg-white overflow-hidden w-[800px] p-4 flex flex-col gap-7"
+        className="bg-white overflow-hidden w-[50rem] max-h-[90%] p-4 flex flex-col gap-7"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center">
@@ -81,7 +81,7 @@ function AddcartModal({ isOpen, onClose, product }) {
           </button>
         </div>
         <div className="flex gap-10 item-center">
-          <img src={productImage} alt={title_ko} className="w-1/2" />
+          <img src={productImage} alt={title_ko} className="w-1/3" />
           <div className="w-full flex flex-col gap-5 px-1 ">
             <div>
               <p>{title}</p>
