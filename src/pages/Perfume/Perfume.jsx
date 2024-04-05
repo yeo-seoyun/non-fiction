@@ -11,15 +11,18 @@ function Perfume() {
       const pb = new PocketBase("https://seoyunpf.pockethost.io");
 
       try {
-        const records = await pb
-          .collection("product")
-          .getFullList({}, { sort: "-created" });
-        setProducts(records);
+        const response = await pb.collection("product").getFullList();
+
+        const filteredProducts = response.filter((product) =>
+          product.category.includes("perfume")
+        );
+        setProducts(filteredProducts);
+
+        // console.log(filteredProducts);
       } catch (error) {
-        console.error("Failed to fetch products:", error);
+        console.error("데이터 불러오기 실패🤯:", error);
       }
     }
-
     fetchProducts();
   }, []);
 

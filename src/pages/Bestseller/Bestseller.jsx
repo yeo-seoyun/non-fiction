@@ -15,8 +15,10 @@ function Bestseller() {
 
         shuffleArray(records);
         setProducts(records);
+
+        console.log(records);
       } catch (error) {
-        console.error("데이터 불러오기 실패:", error);
+        console.error("데이터 불러오기 실패🤯:", error);
       }
     }
 

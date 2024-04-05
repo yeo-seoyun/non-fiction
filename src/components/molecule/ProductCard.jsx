@@ -5,17 +5,16 @@ import AddCartButton from "../atom/AddCartButton";
 import AddcartModal from "./AddCartModal";
 
 function ProductCard({ product }) {
-  const { title_ko, title, price, volume, description_ko, photo } = product;
+  const { title_ko, title, price, volume, description_ko, photo, category } =
+    product;
   const [hover, setHover] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const handleAddToCartClick = () => {
-    // "장바구니 담기" 버튼 클릭시 모달을 표시합니다.
     setShowModal(true);
   };
 
   const handleCloseModal = () => {
-    // 모달의 닫기 버튼 클릭시 모달을 숨깁니다.
     setShowModal(false);
   };
 
@@ -63,6 +62,7 @@ function ProductCard({ product }) {
       </figure>
       <figcaption className="w-full flex flex-col gap-4 p-2">
         <div>
+          <p className="hidden">{category[0]}</p>
           <div className="flex justify-between items-center">
             <p>{title_ko}</p>
             <p>{price.toLocaleString()}원</p>
@@ -88,6 +88,7 @@ ProductCard.propTypes = {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]),
+    category: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 
