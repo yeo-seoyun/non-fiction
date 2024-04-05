@@ -11,17 +11,24 @@ function Bestseller() {
       const pb = new PocketBase("https://seoyunpf.pockethost.io");
 
       try {
-        const records = await pb
-          .collection("product")
-          .getFullList({}, { sort: "-created" });
+        const records = await pb.collection("product").getFullList();
+
+        shuffleArray(records);
         setProducts(records);
       } catch (error) {
-        console.error("Failed to fetch products:", error);
+        console.error("데이터 불러오기 실패:", error);
       }
     }
 
     fetchProducts();
   }, []);
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
   return (
     <>

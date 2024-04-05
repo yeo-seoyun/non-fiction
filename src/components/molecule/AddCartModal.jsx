@@ -1,5 +1,5 @@
 import { getPbImage } from "@/util/getPbImage";
-import Input from "../atom/Input";
+import PocketBase from "pocketbase";
 import Button from "../atom/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,8 @@ import AddModalTable from "./AddModalTable";
 const calculateTotalPrice = (items) => {
   return items.reduce((total, item) => total + item.price, 0);
 };
+
+const pb = new PocketBase("https://seoyunpf.pockethost.io");
 
 function AddcartModal({ isOpen, onClose, product }) {
   const { title_ko, title, price, volume, photo } = product;
@@ -43,6 +45,22 @@ function AddcartModal({ isOpen, onClose, product }) {
   };
 
   const totalPrice = calculateTotalPrice(cartItems);
+
+  const addToCart = async () => {
+    try {
+      const createdItem = await pb.records.create("cart", {
+        title: product.title,
+        price: product.price,
+        volume: product.volume,
+        photo: product.photo,
+        messageCard: selectedOption,
+      });
+
+      console.log("추가된 아이템:", createdItem);
+    } catch (error) {
+      console.error("장바구니에 추가하는데 실패했습니다:", error);
+    }
+  };
 
   return (
     <dialog
@@ -98,6 +116,7 @@ function AddcartModal({ isOpen, onClose, product }) {
               className="p-2 flex-1 text-center bg-black-200 text-white hover:border hover:border-black-200 hover:bg-white hover:text-black-100"
               type="button"
               ariaLabel="장바구니 담기"
+              onClick={addToCart}
             >
               장바구니 담기
             </Button>
