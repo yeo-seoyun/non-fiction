@@ -28,7 +28,7 @@ function Search() {
     setIsSearched(true);
 
     if (!query.trim()) {
-      setFilteredProducts(products);
+      setFilteredProducts(products.slice(0, 8));
       return;
     }
 
