@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const AddModalTable = ({ cartItems, onRemoveItem }) => {
   return (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-x-auto overflow-scroll w-full max-h-[150px]">
       <table className="w-full border-collapse">
         <caption className="sr-only">상품 목록</caption>
         <thead className="sr-only">
