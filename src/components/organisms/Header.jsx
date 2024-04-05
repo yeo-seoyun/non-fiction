@@ -10,7 +10,7 @@ function Header() {
       <header className="w-full h-[5.625rem] px-8 flex items-center justify-between text-xl font-noto-serif font-light">
         <Link
           to="/"
-          className="bg-nf-logo w-[3.75rem] h-[3.75rem] bg-contain"
+          className="bg-nf-logo w-[3.75rem] h-[3.75rem] bg-contain bg-no-repeat"
         ></Link>
         <nav className="flex gap-8">
           <Link

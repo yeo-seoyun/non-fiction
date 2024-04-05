@@ -6,7 +6,6 @@ import { Provider } from "jotai";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function Layout() {
-  // const { state } = useNavigation();
   const queryClient = new QueryClient();
 
   // ScrollToTop();

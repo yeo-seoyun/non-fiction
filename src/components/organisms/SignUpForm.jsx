@@ -4,10 +4,10 @@ import PasswordComponent from "../molecule/PasswordComponent";
 import { useAtom } from "jotai";
 import { emailAtom, emailValid, passwordAtom } from "@/store/stores";
 import { emailReg } from "@/util/utils";
-import { pb } from "@/api/pocketbase";
 import Input from "../atom/Input";
 import { useState } from "react";
 import PhoneNumberComponent from "../molecule/PhoneNumberComponent";
+import pb from "@/api/pocketbase";
 
 const SignUpForm = () => {
   const [emailValue, setEmailValue] = useAtom(emailAtom);

@@ -1,13 +1,12 @@
 import SearchInput from "@/components/atom/SearchInput";
 import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
-import PocketBase from "pocketbase";
 import ProductCard from "@/components/molecule/ProductCard";
+import pb from "@/api/pocketbase";
 
 function Search() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const pb = new PocketBase("https://seoyunpf.pockethost.io");
 
   useEffect(() => {
     const fetchProducts = async () => {

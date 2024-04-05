@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import PocketBase from "pocketbase";
+import pb from "@/api/pocketbase";
 
 const useProductsCategory = (category) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const pb = new PocketBase("https://seoyunpf.pockethost.io");
-
     async function fetchProducts() {
       try {
         const response = await pb.collection("product").getFullList();

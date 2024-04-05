@@ -1,15 +1,14 @@
-import PocketBase from "pocketbase";
+// import PocketBase from "pocketbase";
 import ProductCard from "@/components/molecule/ProductCard";
 import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
+import pb from "@/api/pocketbase";
 
 function Bestseller() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchProducts() {
-      const pb = new PocketBase("https://seoyunpf.pockethost.io");
-
       try {
         const records = await pb.collection("product").getFullList();
 

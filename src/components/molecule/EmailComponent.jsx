@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import Input from "../atom/Input";
 import { emailAtom, emailValid } from "@/store/stores";
 import { useQuery } from "@tanstack/react-query";
-import { pb } from "@/api/pocketbase";
 import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
+import pb from "@/api/pocketbase";
 
 const warning = "border-warning border";
 
