@@ -1,30 +1,9 @@
 import ProductCard from "@/components/molecule/ProductCard";
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import PocketBase from "pocketbase";
+import useProductsCategory from "@/store/usePdocutsCategory";
 
 function Handandbody() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      const pb = new PocketBase("https://seoyunpf.pockethost.io");
-
-      try {
-        const response = await pb.collection("product").getFullList();
-
-        const filteredProducts = response.filter((product) =>
-          product.category.includes("hand&body")
-        );
-        setProducts(filteredProducts);
-
-        // console.log(filteredProducts);
-      } catch (error) {
-        console.error("데이터 불러오기 실패🤯:", error);
-      }
-    }
-    fetchProducts();
-  }, []);
+  const products = useProductsCategory("hand&body");
 
   return (
     <>
