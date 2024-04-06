@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer() {
   return (
     <footer className="bg-gray-300 flex flex-col justify-between p-[1.563rem] w-full h-[18.75rem]">
-      <div className="flex justify-start gap-44">
+      <div className="flex flex-wrap gap-y-4 md:flex-row justify-between">
         <ul>
           <li className="text-lg pb-5">고객센터</li>
           <ul className="flex flex-col gap-1">

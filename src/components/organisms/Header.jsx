@@ -14,13 +14,18 @@ function Header() {
 
   return (
     <>
-      <div className="w-full shadow-default fixed z-30 bg-white bg-opacity-70 ">
-        <header className="w-full h-[5.625rem] px-8 flex items-center justify-between text-xl font-noto-serif font-light">
+      <div className="w-full shadow-default fixed z-30 bg-white bg-opacity-70">
+        <header className="w-full px-4 h-[5.625rem] flex items-center justify-between text-xl font-noto-serif font-light">
+          <button
+            className="md:hidden bg-bar-icon w-[1.813rem] h-[1.563rem] bg-contain"
+            // onClick={openModal} 카테고리 모달 오픈 로직 구현
+          ></button>
           <Link
             to="/"
-            className="bg-nf-logo w-[3.75rem] h-[3.75rem] bg-contain bg-no-repeat"
-          ></Link>
-          <nav className="flex gap-8">
+            className="flex items-center md:bg-nf-logo bg-nfh-logo w-[3.75rem] h-[3.75rem] bg-contain bg-no-repeat bg-center"
+          />
+
+          <nav className="hidden md:flex gap-8">
             <Link
               to="/bestseller"
               aria-label="베스트 셀러"
@@ -69,13 +74,13 @@ function Header() {
               to="/search"
               aria-label="검색"
               className="bg-search-icon w-[1.813rem] h-[1.563rem] bg-contain"
-            ></Link>
+            />
             {!isLoggedIn && (
               <Link
                 to="/login"
                 aria-label="나의정보"
                 className="bg-account-icon w-[1.813rem] h-[1.563rem] bg-contain"
-              ></Link>
+              />
             )}
             <button
               type="button"

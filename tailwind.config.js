@@ -16,9 +16,11 @@ export default {
       },
       backgroundImage: {
         "nf-logo": "url('/src/assets/components/logo.svg')",
+        "nfh-logo": "url('/src/assets/components/half-logo.svg')",
         "search-icon": "url('/src/assets/components/nf-search.svg')",
         "account-icon": "url('/src/assets/components/nf-account.svg')",
         "cart-icon": "url('/src/assets/components/nf-cart.svg')",
+        "bar-icon": "url('/src/assets/components/nf-bar.svg')",
       },
       boxShadow: {
         default: "0px 2px 15px -2px rgba(0, 0, 0, 0.09)",
