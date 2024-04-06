@@ -2,20 +2,21 @@ import Button from "@/components/atom/Button";
 import EmailComponent from "../molecule/EmailComponent";
 import PasswordComponent from "../molecule/PasswordComponent";
 import { useAtom } from "jotai";
-import { emailAtom, emailValid, passwordAtom } from "@/store/stores";
+import { emailAtom, emailValidAtom, passwordAtom } from "@/store/stores";
 import { emailReg } from "@/util/utils";
 import Input from "../atom/Input";
 import { useState } from "react";
 import PhoneNumberComponent from "../molecule/PhoneNumberComponent";
 import pb from "@/api/pocketbase";
+import PasswordConfirmComponent from "../molecule/PasswordContirmComponent";
 
-const SignUpForm = () => {
+function SignUpForm() {
   const [emailValue, setEmailValue] = useAtom(emailAtom);
-  const [emailValidValue, setEmailValid] = useAtom(emailValid);
+  const [emailValidValue, setEmailValid] = useAtom(emailValidAtom);
   const [passwordValue, setPasswordValue] = useAtom(passwordAtom);
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     if (
@@ -35,13 +36,12 @@ const SignUpForm = () => {
         password: passwordValue,
       });
       console.log("회원가입 성공", response);
-      // 여기에 성공 후 처리 로직 추가
+      // 성공 후 처리 로직 추가
     } catch (error) {
       console.error("회원가입 실패", error);
-      // 여기에 오류 처리 로직 추가
+      // 오류 처리 로직 추가
     }
-    console.log(pb.users);
-  };
+  }
 
   return (
     <>
@@ -72,7 +72,7 @@ const SignUpForm = () => {
           value={passwordValue}
           placeholder="비밀번호"
         />
-        <PasswordComponent
+        <PasswordConfirmComponent
           id="confirm-password"
           labelText="비밀번호 확인"
           handleInputChange={(e) => setConfirmPasswordValue(e.target.value)}
@@ -101,6 +101,6 @@ const SignUpForm = () => {
       </form>
     </>
   );
-};
+}
 
 export default SignUpForm;

@@ -1,25 +1,33 @@
 import PropTypes from "prop-types";
 import Input from "../atom/Input";
+import { useAtom } from "jotai";
+import { passwordAtom } from "@/store/stores";
 
-const PassworldComponent = ({
-  id,
-  labelText,
-  handleInputChange,
-  value,
-  placeholder,
-}) => {
+// function pwReg(text) {
+//   const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,16}$/;
+//   return re.test(String(text).toLowerCase());
+// }
+
+function PasswordComponent({ id, labelText, placeholder }) {
+  const [password, SetPassword] = useAtom(passwordAtom);
+  // const [error, setError] = useState("");
+
+  function handleInputChange(e) {
+    SetPassword(e.target.value);
+  }
+
   return (
     <div className="relative">
       <Input
         id={id}
         type="password"
         labelText={labelText}
-        onChange={handleInputChange}
-        value={value}
         className="p-2 border border-gray-200"
         placeholder={placeholder}
         required
         ariaRequired={true}
+        value={password}
+        onChange={handleInputChange}
       />
       {id === "password" && (
         <p className="text-xs text-gray-100">
@@ -28,14 +36,12 @@ const PassworldComponent = ({
       )}
     </div>
   );
-};
+}
 
-PassworldComponent.propTypes = {
+PasswordComponent.propTypes = {
   id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  labelText: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
-export default PassworldComponent;
+export default PasswordComponent;

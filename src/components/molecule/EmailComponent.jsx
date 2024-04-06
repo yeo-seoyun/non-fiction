@@ -21,9 +21,7 @@ function EmailComponent({ error }) {
   const [, setEmailValid] = useAtom(emailValid);
   const [isDuplicate, setIsDuplicate] = useState(false);
   const [emailBorder, setEmailBorder] = useState("");
-
   const [emailValue, setEmailValue] = useAtom(emailAtom);
-  // const isEmailFocused = useRef(false);
 
   const { data: allUsers } = useQuery({
     queryKey: ["users"],
@@ -37,6 +35,7 @@ function EmailComponent({ error }) {
     setIsDuplicate(!!isDuplicateEmail);
   }, [allUsers, emailValue]);
 
+  // 이메일 중복 체크
   const handleValidateEmail = (e) => {
     const isValid = emailReg(e.target.value);
     setEmailValue(e.target.value);

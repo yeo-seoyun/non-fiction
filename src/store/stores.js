@@ -9,7 +9,9 @@ export const emailValid = atom(false); // 이메일 유효성
 
 // 입력값
 export const emailAtom = atom(""); // 이메일 입력값
+export const emailValidAtom = atom(""); // 이메일 입력값
 export const passwordAtom = atom(""); // 패스워드 입력값
+export const confirmPasswordAtom = atom(""); // 패드워드 입력값 확인
 export const nicknameAtom = atom(""); // 닉네임 입력값
 
 // 카테고리 상태 정의
