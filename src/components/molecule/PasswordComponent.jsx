@@ -29,9 +29,9 @@ function PasswordComponent({ id, labelText, placeholder }) {
         id={id}
         type="password"
         labelText={labelText}
-        className={`p-2 border ${
+        className={`p-2 border text-sm ${
           error ? "border-warning" : "border-gray-200"
-        } focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+        } focus:ring-indigo-500 focus:border-indigo-500`}
         placeholder={placeholder}
         required
         ariaRequired={true}

@@ -17,7 +17,7 @@ function PasswordConfirmComponent({ id, labelText, placeholder }) {
         id={id}
         type="password"
         labelText={labelText}
-        className={`p-2 border ${
+        className={`p-2 border text-sm ${
           password === confirmPassword ? "border-gray-200" : "border-warning"
         }`}
         placeholder={placeholder}

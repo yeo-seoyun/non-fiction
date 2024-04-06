@@ -51,7 +51,7 @@ function EmailComponent({ error }) {
         value={emailValue}
         labelText="이메일"
         onChange={handleValidateEmail}
-        className="p-2 border border-gray-200"
+        className="p-2 border border-gray-200 text-sm"
         placeholder="이메일"
         required
         ariaRequired={true}
