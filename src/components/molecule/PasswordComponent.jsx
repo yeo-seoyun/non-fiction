@@ -38,11 +38,6 @@ function PasswordComponent({ id, labelText, placeholder }) {
         value={password}
         onChange={handleInputChange}
       />
-      {/* {id === "password" && (
-        <p className="text-xs text-gray-100">
-          (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~12자)
-        </p>
-      )} */}
       {error && <p className="text-xs text-gray-100">{error}</p>}
     </div>
   );
