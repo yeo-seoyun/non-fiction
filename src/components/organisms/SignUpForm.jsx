@@ -2,7 +2,7 @@ import Button from "@/components/atom/Button";
 import EmailComponent from "../molecule/EmailComponent";
 import PasswordComponent from "../molecule/PasswordComponent";
 import { useAtom } from "jotai";
-import { emailAtom, emailValidAtom, passwordAtom } from "@/store/stores";
+import { emailAtom, emailValid, passwordAtom } from "@/store/stores";
 import { emailReg } from "@/util/utils";
 import Input from "../atom/Input";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import PasswordConfirmComponent from "../molecule/PasswordContirmComponent";
 
 function SignUpForm() {
   const [emailValue, setEmailValue] = useAtom(emailAtom);
-  const [emailValidValue, setEmailValid] = useAtom(emailValidAtom);
+  const [emailValidValue, setEmailValid] = useAtom(emailValid);
   const [passwordValue, setPasswordValue] = useAtom(passwordAtom);
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
 
@@ -55,7 +55,7 @@ function SignUpForm() {
           type="name"
           labelText="이름"
           placeholder="이름"
-          className="p-2 border border-gray-200"
+          className="p-2 border border-gray-200 text-sm"
         />
         <EmailComponent
           handleInputChange={(e) => {
