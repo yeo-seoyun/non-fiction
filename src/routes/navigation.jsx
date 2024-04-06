@@ -8,6 +8,7 @@ import Login from "@/pages/Login/Login";
 import SignUp from "@/pages/SignUp/SignUp";
 import Perfume from "@/pages/Perfume/Perfume";
 import Handandbody from "@/pages/Handandbody/Handandbody";
+import Cart from "@/pages/Cart/Cart";
 
 const navigationItems = [
   {
@@ -31,6 +32,13 @@ const navigationItems = [
     text: "회원가입 페이지",
     element: <SignUp />,
     lazy: () => import("@/pages/SignUp/SignUp"),
+  },
+  {
+    id: "cart",
+    path: "/cart",
+    text: "장바구니 페이지",
+    element: <Cart />,
+    lazy: () => import("@/pages/Cart/Cart"),
   },
   {
     id: "search",
