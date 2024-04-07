@@ -9,6 +9,7 @@ import SignUp from "@/pages/SignUp/SignUp";
 import Perfume from "@/pages/Perfume/Perfume";
 import Handandbody from "@/pages/Handandbody/Handandbody";
 import Cart from "@/pages/Cart/Cart";
+import ProductDetail from "@/pages/ProductDetail/ProductDetail";
 
 const navigationItems = [
   {
@@ -85,6 +86,13 @@ const navigationItems = [
     path: "/comingsoon",
     text: "정보",
     element: <ComingSoon />,
+  },
+  {
+    id: "productdetail",
+    path: "/productdetail/:productId",
+    element: <ProductDetail />,
+    text: "상세 페이지",
+    lazy: () => import("@/pages/ProductDetail/ProductDetail"),
   },
 ];
 

@@ -25,6 +25,7 @@ function Header() {
     <>
       <div className="w-full shadow-default fixed z-30 bg-white bg-opacity-70">
         <header className="w-full px-4 h-[5.625rem] flex items-center justify-between text-xl font-noto-serif font-light">
+          {/* tablet 카테고리 */}
           <button
             className="lg:hidden bg-bar-icon w-[1.813rem] h-[1.563rem] bg-contain"
             onClick={openCategoryModal}
@@ -136,11 +137,11 @@ function Header() {
               </div>
             </div>
           )}
+
           <Link
             to="/"
             className="flex items-center lg:bg-nf-logo bg-nfh-logo w-[3.75rem] h-[3.75rem] bg-contain bg-no-repeat bg-center"
           />
-
           <nav className="hidden lg:flex gap-8">
             <Link
               to="/bestseller"
