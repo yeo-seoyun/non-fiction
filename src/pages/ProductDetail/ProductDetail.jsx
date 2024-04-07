@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import pb from "@/api/pocketbase";
 import { useEffect, useState } from "react";
-import { getPbImage, getPbImageURL } from "@/util/getPbImage";
+import { getPbImage } from "@/util/getPbImage";
 import { Helmet } from "react-helmet-async";
 
 function ProductDetail() {
@@ -46,13 +46,25 @@ function ProductDetail() {
         <meta charSet="utf-8" />
         <title>NONFICTION | 상세페이지</title>
       </Helmet>
-      <section className="py-[9.375rem] w-full flex items-center justify-center">
-        <h1>{productData.title_ko}</h1>
-        {imageUrl && (
-          <img src={imageUrl} alt={productData.title_ko} className="w-[20%]" />
-        )}
-        <p>{productData.description_ko}</p>
-        {/* ... 추가 상품 정보 ... */}
+      <section className="py-[9.375rem] w-full px-28 flex items-center justify-center bg-slate-400">
+        <div className="bg-purple-300 flex-1">
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              alt={productData.title_ko}
+              className="w-[70%]"
+            />
+          )}
+        </div>
+        <div className="bg-pink-500 flex-1">
+          <h1 className="font-noto-serif font-light">{productData.title}</h1>
+          <div className="flex items-center justify-between">
+            <p>{productData.title_ko}</p>
+            <p>{productData.price.toLocaleString()}원</p>
+          </div>
+          <p>{productData.description_ko}</p>
+          <p>{productData.description}</p>
+        </div>
       </section>
     </>
   );
