@@ -38,6 +38,7 @@ function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
+                className="hidden lg:block"
               ></li>
             </ul>
           </div>
@@ -83,6 +84,7 @@ function Home() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
+                className="hidden lg:block"
               ></li>
             </ul>
           </div>

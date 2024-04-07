@@ -37,8 +37,7 @@ function Bestseller() {
       </Helmet>
       <section className="py-[9.375rem] w-full flex items-center justify-center">
         <h2 className="sr-only">베스트 셀러</h2>
-
-        <ul className="list-none grid grid-cols-4 gap-12">
+        <ul className="ist-none grid grid-cols-2 lg:grid-cols-4 gap-12">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
