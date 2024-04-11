@@ -1,17 +1,15 @@
 import { getPbImage } from "@/util/getPbImage";
-import PocketBase from "pocketbase";
 import Button from "../atom/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import SelectComponent from "./SelectComponent";
 import { useState } from "react";
 import AddModalTable from "./AddModalTable";
+import MessageCardSelect from "../atom/MessageCardSelect";
+import AddToCartButton from "../atom/AddToCartButton";
 
 const calculateTotalPrice = (items) => {
   return items.reduce((total, item) => total + item.price, 0);
 };
-
-const pb = new PocketBase("https://seoyunpf.pockethost.io");
 
 function AddcartModal({ isOpen, onClose, product }) {
   const { title_ko, title, price, volume, photo } = product;
@@ -46,22 +44,6 @@ function AddcartModal({ isOpen, onClose, product }) {
 
   const totalPrice = calculateTotalPrice(cartItems);
 
-  const addToCart = async () => {
-    try {
-      const createdItem = await pb.records.create("cart", {
-        title: product.title,
-        price: product.price,
-        volume: product.volume,
-        photo: product.photo,
-        messageCard: selectedOption,
-      });
-
-      console.log("추가된 아이템:", createdItem);
-    } catch (error) {
-      console.error("장바구니에 추가하는데 실패했습니다:", error);
-    }
-  };
-
   return (
     <dialog
       className={`fixed w-full h-full inset-0 bg-black-100 bg-opacity-70 flex justify-center items-center z-50 ${
@@ -87,22 +69,10 @@ function AddcartModal({ isOpen, onClose, product }) {
               <p>{title}</p>
               <span>{title_ko}</span>,<span>{volume}</span>
             </div>
-            <div>
-              <p>메세지카드</p>
-              <SelectComponent
-                id="messageCard"
-                value={selectedOption}
-                onChange={(e) => handleSelectChange(e.target.value)}
-                options={[
-                  { label: "[필수] 옵션을 선택 해주세요", value: "option1" },
-                  { label: "Thank you", value: "Thank you" },
-                  { label: "Happy Birthday", value: "Happy Birthday" },
-                  { label: "Congratulations", value: "Congratulations" },
-                  { label: "선택안함", value: "선택안함" },
-                ]}
-                className="border p-2 mt-1"
-              />
-            </div>
+            <MessageCardSelect
+              selectedOption={selectedOption}
+              handleSelectChange={handleSelectChange}
+            />
           </div>
         </div>
         <AddModalTable cartItems={cartItems} onRemoveItem={handleRemoveItem} />
@@ -112,14 +82,10 @@ function AddcartModal({ isOpen, onClose, product }) {
             <p>{totalPrice.toLocaleString()}원</p>
           </div>
           <div className="flex gap-2 item-center justify-between">
-            <Button
-              className="p-2 flex-1 text-center bg-black-200 text-white hover:border hover:border-black-200 hover:bg-white hover:text-black-100"
-              type="button"
-              ariaLabel="장바구니 담기"
-              onClick={addToCart}
-            >
-              장바구니 담기
-            </Button>
+            <AddToCartButton
+              product={product}
+              selectedOption={selectedOption}
+            />
             <Button
               className="border border-black-200 p-2 text-center hover:bg-black-200 hover:text-white"
               type="button"

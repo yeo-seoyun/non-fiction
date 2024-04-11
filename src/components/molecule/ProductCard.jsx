@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { getPbImage } from "@/util/getPbImage";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AddCartButton from "../atom/AddCartButton";
 import AddcartModal from "./AddCartModal";
-import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const { title_ko, title, price, volume, description_ko, photo, category } =
@@ -11,7 +11,13 @@ function ProductCard({ product }) {
   const [hover, setHover] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const handleAddToCartClick = () => {
+  const navigate = useNavigate();
+  const goToProductDetail = () => {
+    navigate(`/ProductDetail/${product.id}`);
+  };
+
+  const handleAddToCartClick = (event) => {
+    event.stopPropagation();
     setShowModal(true);
   };
 
@@ -31,14 +37,13 @@ function ProductCard({ product }) {
       : defaultImage;
 
   return (
-    <Link to={`/productdetail/${product.id}`} className="block w-full">
+    <div onClick={goToProductDetail} className="block w-full cursor-pointer">
       <li
         className="w-full flex flex-col justify-between items-center"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
         <figure className="w-full relative m-0" style={{ paddingTop: "100%" }}>
-          {/* 기본 이미지 */}
           <img
             src={defaultImage}
             alt={title_ko}
@@ -46,7 +51,6 @@ function ProductCard({ product }) {
               hover ? "opacity-0" : "opacity-100"
             }`}
           />
-          {/* 호버 이미지 */}
           <img
             src={hoverImage}
             alt={title_ko}
@@ -56,7 +60,10 @@ function ProductCard({ product }) {
           />
           {/* "장바구니 담기" 버튼 */}
           <AddCartButton
-            onAddToCart={handleAddToCartClick}
+            onAddToCart={(event) => {
+              event.stopPropagation();
+              handleAddToCartClick(event);
+            }}
             isHovering={hover}
           />
           <AddcartModal
@@ -79,7 +86,7 @@ function ProductCard({ product }) {
           <p className="text-sm">{description_ko}</p>
         </figcaption>
       </li>
-    </Link>
+    </div>
   );
 }
 
