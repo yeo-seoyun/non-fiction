@@ -21,6 +21,8 @@ export default {
         "account-icon": "url('/src/assets/components/nf-account.svg')",
         "cart-icon": "url('/src/assets/components/nf-cart.svg')",
         "bar-icon": "url('/src/assets/components/nf-bar.svg')",
+        "gift-wrapping": "url('/src/assets/components/nf-gift1.jpg')",
+        "message-card": "url('/src/assets/components/nf-gift2.jpg')",
       },
       boxShadow: {
         default: "0px 2px 15px -2px rgba(0, 0, 0, 0.09)",

@@ -8,7 +8,25 @@ function ProductInfo({ product }) {
   return (
     <div>
       <Dropdown title="선물을 위한 혜택">
-        <p>드롭다운 내용 1</p>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-start justify-start gap-4">
+            <p className="bg-gift-wrapping w-24 h-24 bg-no-repeat bg-center bg-cover"></p>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm text-black-100">무료 선물 포장 서비스</h3>
+              <p>주문 단계에서 선택해 주세요. (네이버페이 구매시 선택 불가)</p>
+            </div>
+          </div>
+          <div className="flex items-start justify-start gap-4">
+            <p className="bg-message-card w-24 h-24 bg-no-repeat bg-center bg-cover"></p>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-sm text-black-100">
+                메시지 카드 증정 <br />
+                하단 옵션에서 선택해 주세요.
+              </h3>
+              <p>THANK YOU ㅣ HAPPY BIRTHDAY ㅣ CONGRATULATIONS</p>
+            </div>
+          </div>
+        </div>
       </Dropdown>
       <Dropdown title="전성분">
         {product.mfds && <p>{product.mfds}</p>}
