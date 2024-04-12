@@ -55,12 +55,12 @@ function ProductDetail() {
     })) || [];
 
   return (
-    <>
+    <div className="py-[9.375rem] w-full px-28 flex flex-col gap-16">
       <Helmet>
         <meta charSet="utf-8" />
         <title>NONFICTION | 상세페이지</title>
       </Helmet>
-      <section className="py-[9.375rem] w-full px-28 flex items-start justify-center">
+      <section className="flex items-start justify-center">
         <article className="w-[65%] md:w-[55%]">
           {imageUrl && (
             <ProductImage
@@ -107,7 +107,13 @@ function ProductDetail() {
           <ProductInfo product={productData} />
         </article>
       </section>
-    </>
+
+      <section className="flex items-start justify-center">
+        <article>
+          <h3 className="text-2xl">추천상품</h3>
+        </article>
+      </section>
+    </div>
   );
 }
 
