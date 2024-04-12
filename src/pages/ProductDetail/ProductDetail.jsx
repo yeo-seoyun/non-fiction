@@ -7,6 +7,7 @@ import MessageCardSelect from "@/components/atom/MessageCardSelect";
 import Button from "@/components/atom/Button";
 import AddToCartButton from "@/components/atom/AddToCartButton";
 import ProductInfo from "@/components/molecule/ProductInfo";
+import ProductImage from "@/components/organisms/ProductImages";
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -47,7 +48,11 @@ function ProductDetail() {
     ? getPbImage(productData.collectionId, productData.id, productData.photo[0])
     : null;
 
-  console.log(imageUrl);
+  const thumbnails =
+    productData.photo?.map((photoName) => ({
+      url: getPbImage(productData.collectionId, productData.id, photoName),
+      alt: `${productData.title_ko} 썸네일`,
+    })) || [];
 
   return (
     <>
@@ -57,12 +62,12 @@ function ProductDetail() {
       </Helmet>
       <section className="py-[9.375rem] w-full px-28 ">
         <article className="flex items-start justify-center">
-          <div className="bg-purple-300 flex-1">
+          <div className="w-[65%]">
             {imageUrl && (
-              <img
-                src={imageUrl}
-                alt={productData.title_ko}
-                className="w-[70%]"
+              <ProductImage
+                imageUrl={imageUrl}
+                altText={productData.title_ko}
+                thumbnails={thumbnails}
               />
             )}
           </div>
