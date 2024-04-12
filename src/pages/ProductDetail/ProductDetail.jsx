@@ -62,7 +62,7 @@ function ProductDetail() {
       </Helmet>
       <section className="py-[9.375rem] w-full px-28 ">
         <article className="flex items-start justify-center">
-          <div className="w-[65%]">
+          <div className="w-[65%] md:w-[55%]">
             {imageUrl && (
               <ProductImage
                 imageUrl={imageUrl}
@@ -71,7 +71,8 @@ function ProductDetail() {
               />
             )}
           </div>
-          <div className="w-[35%] flex flex-col gap-4">
+
+          <div className="w-[35%] flex flex-col gap-4 md:w-[45%]">
             <div>
               <h1 className="font-noto-serif font-light">
                 {productData.title}
