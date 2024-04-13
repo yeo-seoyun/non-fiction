@@ -31,10 +31,7 @@ function ProductDetail() {
         setLoading(false);
       }
     }
-
-    if (productId) {
-      fetchProduct();
-    }
+    fetchProduct();
   }, [productId]);
 
   if (isLoading) {

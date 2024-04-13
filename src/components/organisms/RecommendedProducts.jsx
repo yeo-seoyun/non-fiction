@@ -34,9 +34,14 @@ function RecommendedProducts({ currentProductId, currentCategory }) {
       <Swiper
         className="w-full"
         spaceBetween={30}
-        slidesPerView={4}
+        slidesPerView={3}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        breakpoints={{
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
       >
         {recommendedProducts.map((product) => (
           <SwiperSlide key={product.id}>
