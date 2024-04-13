@@ -66,7 +66,7 @@ function AddcartModal({ isOpen, onClose, product }) {
           <img src={productImage} alt={title_ko} className="w-1/3" />
           <div className="w-full flex flex-col gap-5 px-1 ">
             <div>
-              <p>{title}</p>
+              <h3 className="text-xl">{title}</h3>
               <span>{title_ko}</span>,<span>{volume}</span>
             </div>
             <MessageCardSelect
