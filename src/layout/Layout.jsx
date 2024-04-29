@@ -8,8 +8,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 function Layout() {
   const queryClient = new QueryClient();
 
-  // ScrollToTop();
-
   return (
     <QueryClientProvider client={queryClient}>
       <Provider>
