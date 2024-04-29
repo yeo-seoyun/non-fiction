@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import "./src/styles/main.css";
-import "./src/styles/tailwind.css";
-import "./src/styles/normalize.css";
-import routes from "./routes"; // 라우트 설정을 가져옵니다.
+import "./styles/main.css";
+import "./styles/tailwind.css";
+import "./styles/normalize.css";
+import routes from "./routes/index"; // 라우트 설정을 가져옵니다.
 
 // Vite 환경 변수에서 PUBLIC_URL을 가져옵니다. 만약 없다면 기본값으로 '/'를 사용합니다.
 const basename = import.meta.env.VITE_PUBLIC_URL || "/";
