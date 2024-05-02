@@ -48,7 +48,7 @@ function SignUpForm() {
       <form
         id="signup-form"
         onSubmit={handleSubmit}
-        className="flex flex-col gap-6 justify-center"
+        className="w-full sm:w-[90%] flex flex-col gap-6 justify-center m-auto"
       >
         <Input
           id="name"

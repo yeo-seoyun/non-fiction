@@ -10,7 +10,7 @@ function SignUp() {
       </Helmet>
       <section className="w-full py-[9.375rem] flex flex-col gap-24 items-center justify-center">
         <h2 className="text-3xl">회원가입</h2>
-        <div className="w-[30rem]">
+        <div className="w-[30rem] sm:w-full">
           <SignUpForm />
         </div>
       </section>

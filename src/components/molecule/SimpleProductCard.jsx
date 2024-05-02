@@ -27,9 +27,9 @@ function SimpleProductCard({ product }) {
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
       </div>
-      <div className="flex items-center justify-between lg-text-base md:text-sm">
-        <h3 className="">{product.title_ko}</h3>
-        <p className="text-sm">{`${product.price.toLocaleString()}원`}</p>
+      <div className="flex sm:flex-col items-center justify-between lg:text-base md:text-sm">
+        <h3 className="sm:text-xs">{product.title_ko}</h3>
+        <p className="text-sm sm:text-xs">{`${product.price.toLocaleString()}원`}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import EmailComponent from "../molecule/EmailComponent";
 const LoginForm = () => {
   return (
     <>
-      <form className="flex flex-col gap-12">
+      <form className="w-full sm:w-[90%] flex flex-col gap-12 m-auto">
         <div className="flex flex-col gap-6">
           <EmailComponent />
           <PassworldComponent

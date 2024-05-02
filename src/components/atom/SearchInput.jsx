@@ -23,7 +23,7 @@ function SearchInput({ onSearch }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-1/3 flex flex-col gap-6 items-center justify-center"
+      className="w-1/3 sm:w-[80%] flex flex-col gap-6 items-center justify-center"
     >
       <label htmlFor="inputSearch" className="font-noto-serif">
         SEARCH

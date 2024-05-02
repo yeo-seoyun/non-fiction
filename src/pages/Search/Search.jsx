@@ -55,7 +55,7 @@ function Search() {
       >
         <h2 className="sr-only">검색</h2>
         <SearchInput onSearch={handleSearch} />
-        <ul className="list-none grid grid-cols-4 gap-12">
+        <ul className="list-none grid grid-cols-4 sm:grid-cols-1 gap-12">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

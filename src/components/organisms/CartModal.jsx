@@ -28,7 +28,7 @@ function Cart({ isOpen, onClose }) {
       }`}
       onClick={handleOnCloseClick}
     >
-      <div className="fixed top-[5.625rem] right-0 w-[535px] h-[582px] flex flex-col gap-10 p-4 border border-black-100 bg-white z-50">
+      <div className="fixed top-[5.625rem] right-0 w-[535px] h-[582px] sm:w-full sm:max-h-[70%] flex flex-col gap-10 p-4 border border-black-100 bg-white z-50">
         <div className="flex justify-between">
           <h2 className="text-lg font-bold">장바구니(수량)</h2>
           <button onClick={onClose}>
@@ -38,8 +38,10 @@ function Cart({ isOpen, onClose }) {
         <CartList />
         <div className="flex flex-col items-center justify-center">
           <div className="flex justify-between items-center w-full mb-4">
-            <span className="text-lg font-semibold">주문금액</span>
-            <span className="text-lg font-semibold">158,000원</span>
+            <span className="text-lg sm:text-base font-semibold">주문금액</span>
+            <span className="text-lg sm:text-base font-semibold">
+              158,000원
+            </span>
           </div>
           <Button
             className="w-full p-2 text-center bg-black-200  text-white hover:border hover:border-black-200 hover:bg-white hover:text-black-100"
