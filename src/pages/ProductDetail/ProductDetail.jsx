@@ -53,12 +53,12 @@ function ProductDetail() {
     })) || [];
 
   return (
-    <div className="py-[9.375rem] w-full px-28 flex flex-col gap-16">
+    <div className="py-[9.375rem] w-full px-28 sm:px-2 flex flex-col gap-16">
       <Helmet>
         <meta charSet="utf-8" />
         <title>NONFICTION | 상세페이지</title>
       </Helmet>
-      <section className="flex items-start justify-center">
+      <section className="w-full flex sm:flex-col sm:items-center items-start justify-center">
         <article className="w-[65%] md:w-[55%]">
           {imageUrl && (
             <ProductImage
@@ -69,9 +69,11 @@ function ProductDetail() {
           )}
         </article>
 
-        <article className="w-[35%] flex flex-col gap-4 md:w-[45%]">
+        <article className="w-[35%] flex flex-col gap-4 md:w-[45%] sm:w-[90%]">
           <div>
-            <h1 className="font-noto-serif font-light">{productData.title}</h1>
+            <h1 className="font-noto-serif font-light sm:text-2xl">
+              {productData.title}
+            </h1>
             <div className="flex items-center justify-between">
               <p>{productData.title_ko}</p>
               <p>{productData.price.toLocaleString()}원</p>

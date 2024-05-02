@@ -3,7 +3,7 @@ import SelectComponent from "../molecule/SelectComponent";
 const MessageCardSelect = ({ selectedOption, handleSelectChange }) => {
   return (
     <div>
-      <p>메세지카드</p>
+      <p className="sm:text-sm">메세지카드</p>
       <SelectComponent
         id="messageCard"
         value={selectedOption}
@@ -15,7 +15,7 @@ const MessageCardSelect = ({ selectedOption, handleSelectChange }) => {
           { label: "Congratulations", value: "Congratulations" },
           { label: "선택안함", value: "선택안함" },
         ]}
-        className="border p-2 mt-1"
+        className="border p-2 mt-1 sm:w-full sm:text-xs"
       />
     </div>
   );
