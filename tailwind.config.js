@@ -2,6 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: { min: "320px", max: "767px" },
+      md: { min: "768px", max: "1079px" },
+      lg: { min: "1080px" },
+    },
     extend: {
       colors: {
         black: {
