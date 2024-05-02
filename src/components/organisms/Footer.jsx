@@ -1,11 +1,12 @@
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Dropdown from "../atom/Dropdown";
 
 function Footer() {
   return (
-    <footer className="bg-gray-300 flex flex-col justify-between p-[1.563rem] w-full h-[30vh] md:h-[25vh] sm:h-[40vh]">
-      <div className="flex flex-wrap gap-y-4 lg:flex-row  sm:flex-col justify-between">
+    <footer className="bg-gray-300 flex flex-col justify-between gap-3 p-[1.563rem] w-full h-[30vh] md:h-auto sm:h-auto ">
+      <div className="flex flex-wrap gap-y-4 lg:flex-row  sm:flex-col justify-between md:hidden sm:hidden">
         <ul>
           <li className="text-lg pb-5">고객센터</li>
           <ul className="flex flex-col gap-1">
@@ -44,6 +45,44 @@ function Footer() {
           </ul>
         </ul>
       </div>
+
+      <div className="lg:hidden flex flex-col gap-5">
+        <ul>
+          <li className="text-lg pb-5">고객센터</li>
+          <ul className="flex flex-col gap-1">
+            <li className="text-lg">1666-7891</li>
+            <li>
+              <FontAwesomeIcon icon={faClock} className="mr-1" />
+              10:00 ~ 17:00
+            </li>
+            <li>주말 및 공휴일 휴무</li>
+          </ul>
+        </ul>
+        <Dropdown title="온라인 단독 혜택">
+          <ul className="flex  flex-col gap-1">
+            <li>공식 온라인 스토어 혜택</li>
+            <li>오드퍼퓸 체험 키트</li>
+          </ul>
+        </Dropdown>
+        <Dropdown title="서비스">
+          <ul className="flex flex-col gap-1">
+            <li>기업구매문의</li>
+            <li>채용</li>
+            <li>자주 묻는 질문</li>
+            <li>배송&교환/반품</li>
+            <li>매장안내</li>
+          </ul>
+        </Dropdown>
+        <Dropdown title="소셜">
+          <ul>
+            <li>
+              <FontAwesomeIcon icon={faInstagram} className="mr-1" />
+              Instagram
+            </li>
+          </ul>
+        </Dropdown>
+      </div>
+
       <div className="text-xs text-gray-100 flex gap-1">
         <a href="none">이용약관</a>
         <span>|</span>
